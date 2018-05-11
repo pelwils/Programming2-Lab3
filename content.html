@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>NYC Job Postings</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <!--Utilizing the table function-->
+        <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://cdn.dataTables.net/1.10.16/css/jquery.dataTables.css">
+        <!--FONT-->
+        <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="http://getskeleton.com/dist/css/skeleton.css">
+    </head>
+    <body>
+        <table id="myTable" class="display">
+            <thead>
+                <tr>
+                    <th>Posting Date</th>
+                    <th>Agency</th>
+                    <th>Business Title</th>
+                    <th>Job Category</th>
+                    <th>Minimum Req.</th>
+                    <th>Starting Salary Range</th>
+                    <th>Work Location</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#dataOutput}}
+                <tr>
+                    <td>{{posting_date}}</td>
+                    <td>{{agency}}</td>
+                    <td>{{business_title}}</td>
+                    <td>{{job_category}}</td>
+                    <td>{{minimum_qual_requirements}}</td>
+                    <td>{{salary_range_from}}</td>
+                    <td>{{salary_range_to}}</td>
+                    <td>{{work_location}}</td>
+                </tr>
+                {{/dataOutput}}
+            </tbody>
+        </table>
+        <script>
+            $(document).ready( function () {
+            $('#myTable').DataTable();
+            });
+        </script>
+    </body>
+</html>
